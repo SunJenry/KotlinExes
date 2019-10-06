@@ -20,10 +20,13 @@ fun fishExe() {
 
 //    with()
 
+    //return name or the result of the run block
     println(fish.run { name })
 
+    //return the fish Object after the lambda
     println(fish.apply { })
 
+    //let return a copy of the object
     println(fish.let { it.name.capitalize() }
         .let { "$it Fish" }
         .let { it.length }
