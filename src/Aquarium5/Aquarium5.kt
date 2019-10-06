@@ -14,7 +14,7 @@ fun fishExe() {
         println(this.capitalize())
     }
 
-    //why without inline it takes more cost
+    //why without inline it takes more cost,it creates object every time
     myWith(fish.name, object : Function1<String, Unit> {
         override fun invoke(name: String) {
             name.capitalize()
