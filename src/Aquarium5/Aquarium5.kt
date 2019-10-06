@@ -13,6 +13,13 @@ fun fishExe() {
     myWith(fish.name) {
         println(this.capitalize())
     }
+
+    //why without inline it takes more cost
+    myWith(fish.name, object : Function1<String, Unit> {
+        override fun invoke(name: String) {
+            name.capitalize()
+        }
+    })
     //with inline no object is created,and lambda body is inline here
     fish.name.capitalize()
 
