@@ -14,6 +14,11 @@ fun fishExe() {
         println(this.capitalize())
     }
 
+    //compare with myWith
+    with(fish.name){
+        capitalize()
+    }
+
     //why without inline it takes more cost,it creates object every time
     myWith(fish.name, object : Function1<String, Unit> {
         override fun invoke(name: String) {
@@ -31,7 +36,13 @@ fun fishExe() {
     println(fish.run { name })
 
     //return the fish Object after the lambda
-    println(fish.apply { })
+    println(fish.apply {
+
+    })
+
+    fish.also {
+
+    }
 
     //let return a copy of the object
     println(fish.let { it.name.capitalize() }
